@@ -282,14 +282,22 @@ img, svg {
 }
 
 @media (max-width: 480px) {
+  /* Phone: show the definition as a card pinned inside the screen, so it can
+     never extend past the right edge and make the whole page scroll sideways. */
   .term .tooltip {
-    width: 200px;
-    left: 0;
-    transform: translateX(0) translateY(4px);
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+    transform: translateY(8px);
+  }
+  .term .tooltip::after {
+    display: none;
   }
   .term:hover .tooltip,
   .term.active .tooltip {
-    transform: translateX(0) translateY(0);
+    transform: translateY(0);
   }
 }
 
